@@ -6,6 +6,8 @@ import Home from './Components/LandingPage/LandingPage';
 import DeskExercise from './Components/DeskExercise/DeskExercise';
 import AskMeAnything from './Components/AMA/AskMeAnything';
 import UpskillPage from './Components/UpskillPage/Upskill';
+import Blog from './Components/Blog/Blog';
+import Course from './Components/Course/Course'
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
             <Route exact path="/deskexercise" component={DeskExercise}/>
             <Route exact path="/upskillzo" component={UpskillPage}/>
             <Route exact path="/askmeanything" component={AskMeAnything}/>
+            <Route exact path="/blog" component={Blog}/>
+            <Route exact path="/course" component={Course}/>
           </Switch>
       </HashRouter>
       {/* </header> */}
