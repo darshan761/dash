@@ -8,6 +8,7 @@ import AskMeAnything from './Components/AMA/AskMeAnything';
 import UpskillPage from './Components/UpskillPage/Upskill';
 import Blog from './Components/Blog/Blog';
 import Course from './Components/Course/Course'
+import Health from './Components/HealthLanding/Health'
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route exact path="/askmeanything" component={AskMeAnything}/>
             <Route exact path="/blog" component={Blog}/>
             <Route exact path="/course" component={Course}/>
+            <Route exact path="/health" component={Health}/>
           </Switch>
       </HashRouter>
       {/* </header> */}
