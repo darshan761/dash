@@ -14,7 +14,8 @@ import Avatar from '@material-ui/core/Avatar';
 import FaceIcon from '@material-ui/icons/Face';
 import Paper from '@material-ui/core/Paper';
 import toast from 'react-hot-toast';
-import dashboardImage from '../../Resources/Images/dashboard_img.jpg';
+import dashboardImage from '../../Resources/Images/dashboard_imag.jpg';
+import dash from '../../Resources/Images/ey-dash.gif'
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
@@ -83,7 +84,7 @@ const useStyles = makeStyles((theme) => ({
 const mainFeaturedPost = {
   title: 'DASH - Digital Ally for Smart Human',
   description:
-    "Description will come here",
+    "Inspired by IKIGAI concept, DASH makes employees to be their best version in three main aspects - Work, Career & Life",
     image: dashboardImage,
   imgText: 'main image description',
   linkText: 'Continue reading…'
@@ -114,13 +115,20 @@ export default function Home() {
 
         <Container maxWidth="lg">
           <Header title="DASH" />
+          
           <main>
             <MainFeaturedPost post={mainFeaturedPost} />
+            
             <Container className={classes.cardGrid} maxWidth="lg">
-               <Typography variant="subtitle" align="center" className={classes.divHeading}>
+            <Typography variant="subtitle" align="center" className={classes.divHeading}>
                   <b>👋Meet DASH by Team BAscheD👋</b>
                 </Typography>
                 <br/><br/>
+            <center>
+
+            <img src= {dash} align="center" />
+          </center>
+             
               <Grid container spacing={3}>
                 {dashboardStats.map((paper) => (
                   <Grid item key={paper.title} xs={6} sm={3}>
