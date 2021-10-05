@@ -108,7 +108,7 @@ export default function DeskExercise() {
 
 
 const mainFeaturedPost = {
-    title: 'Health & Wellness',
+    title: 'Health and Mental Wellness',
     description: "Your Health and Wellness Buddy making sure you are absolutely fine from inside and outside!",
     image:"https://thumbs.dreamstime.com/z/illustration-yoga-studio-room-instructor-leading-people-beginner-to-advanced-level-class-tree-pose-variations-banner-147899944.jpg",
     imgText: 'main image description',
