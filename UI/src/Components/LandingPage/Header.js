@@ -11,10 +11,11 @@ import Link from '@material-ui/core/Link';
 
 const sections = [
   { title: 'Home', url: '#/home' },
-  { title: 'Health', url: '#/health' },
-  { title: 'Ask me Anything', url: '#/askmeanything' },
+  { title: 'Work', url: '#/home' },
   { title: 'UpSkill', url: '#/upskillzo' },
-  { title: 'Tab 4', url: '#/home' },
+  { title: 'Health', url: '#/health' },
+  { title: 'Community Connect', url: '#/home' },
+  { title: 'My Profile', url: '#/home' },
 ];
 
 const useStyles = makeStyles((theme) => ({
