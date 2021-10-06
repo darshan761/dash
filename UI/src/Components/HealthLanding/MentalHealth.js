@@ -116,7 +116,7 @@ export default function MentalHealth() {
                 </Box>
                 <Box gridColumn="span 4" className={classes.gaps}>
                     <Card sx={{ maxWidth: 345 }}>
-                        <CardActionArea href="https://www.youtube.com/watch?v=ZToicYcHIOU&t=220s">
+                        <CardActionArea href="#/meditation">
                             <CardMedia
                             component="img"
                             height="250"
@@ -158,7 +158,7 @@ export default function MentalHealth() {
 
                 <Box gridColumn="span 4" className={classes.gaps}>
                     <Card sx={{ maxWidth: 345 }}>
-                        <CardActionArea href="/askmeanything">
+                        <CardActionArea href="#/askmeanything">
                             <CardMedia
                             component="img"
                             height="250"

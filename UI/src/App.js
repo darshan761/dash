@@ -10,6 +10,7 @@ import Blog from './Components/Blog/Blog';
 import Course from './Components/Course/Course'
 import Health from './Components/HealthLanding/Health'
 import CommunityConnect from './Components/CommunityConnect/CommunityConnect';
+import Meditation from './Components/Meditation/Meditation';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             <Route exact path="/blog" component={Blog}/>
             <Route exact path="/course" component={Course}/>
             <Route exact path="/health" component={Health}/>
+            <Route exact path="/meditation" component={Meditation}/>
             <Route exact path="/communityconnect" component={CommunityConnect}/>
           </Switch>
       </HashRouter>

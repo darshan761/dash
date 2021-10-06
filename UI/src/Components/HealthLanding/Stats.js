@@ -212,7 +212,7 @@ export default function Stats() {
                 <Box gridColumn="span 6" className={classes.gaps}>
                     <Card sx={{ maxWidth: 345 }}>
                         {/* <NavLink to='/deskexercise'> */}
-                            <CardActionArea href = '/deskexercise'>
+                            <CardActionArea href = '#/deskexercise'>
                                 <CardMedia
                                 component="img"
                                 height="300"
