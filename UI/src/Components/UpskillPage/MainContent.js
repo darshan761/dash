@@ -8,6 +8,7 @@ import ChipInput from 'material-ui-chip-input'
 import Learnings from './Learnings';
 import Articles from './Articles';
 import toast, { Toaster } from 'react-hot-toast';
+import Events from './Events';
 //import Link from '@material-ui/core/Link';
 
 const notifyRecommendCourse = () => {
@@ -131,6 +132,19 @@ const pythonCourse = {
 const initialChipList = [
 ];
 
+const learningEvents = [
+    {
+        title: 'Aspire program',
+        description: 'Our Aspire program targets high potential senior executives as they prepare to become managers.',
+        date: '20/7/21 - 24/7/21'
+    },
+    {
+        title: 'EY Vantage program',
+        description: 'The EY Vantage program works to support high-impact entrepreneurs in emerging markets.',
+        date: '20/7/21 - 24/7/21'
+    },
+];
+
 export default function MainContent(props) {
     const classes = useStyles();
     const { post } = props;
@@ -192,6 +206,12 @@ export default function MainContent(props) {
                     Learnings in Progress :
                 </Typography>
                 <Learnings learnings={featuredCourses} />
+
+                <br />
+                <Typography variant="subtitle1" align="left" gutterBottom className={classes.subHeading}>
+                    Upcoming Learning Events : 
+                </Typography>
+                <Events learningEvents={learningEvents} />
 
 
             </div>
