@@ -137,7 +137,7 @@ export default function MentalHealth() {
 
                 <Box gridColumn="span 4" className={classes.gaps}>
                     <Card sx={{ maxWidth: 345 }}>
-                        <CardActionArea href="https://www.youtube.com/watch?v=kgrMAsRrxMM">
+                        <CardActionArea href="/#/affirmations">
                             <CardMedia
                             component="img"
                             height="250"

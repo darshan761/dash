@@ -23,7 +23,7 @@ import upskillImage from '../../Resources/Images/upskill_img.jpg';
 
 const notifyWelcome = () => {
   console.log("here")
-  toast.success("UpSkillzo welcomes you !");
+  toast.success("UpSkill welcomes you !");
 
 };
 
@@ -54,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 const mainFeaturedPost = {
-  title: 'Upskillzo - Learning with Deskbuddy',
+  title: 'Upskill - Active Learning with DASH',
   description:
     "Your personalized learning hub because no matter where you are in your current career, its never too late to learn and develop new skills.",
   image:upskillImage ,
@@ -98,7 +98,7 @@ export default function Home() {
       <header className="App-header">
 
         <Container maxWidth="lg">
-        <Header title="UpSkillzo - Improve one page at a time" />
+        <Header title="UpSkill - Improve one page at a time with DASH" />
           <main>
 
             <MainFeaturedPost post={mainFeaturedPost} />

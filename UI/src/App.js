@@ -12,6 +12,7 @@ import Health from './Components/HealthLanding/Health'
 import CommunityConnect from './Components/CommunityConnect/CommunityConnect';
 import Meditation from './Components/Meditation/Meditation';
 import ProfileMain from './Components/Profile/ProfileMain';
+import Affirmations from './Components/Affirmations/Affirmations';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
             <Route exact path="/meditation" component={Meditation}/>
             <Route exact path="/communityconnect" component={CommunityConnect}/>
             <Route exact path="/profile" component={ProfileMain}/>
+            <Route exact path="/affirmations" component={Affirmations}/>
           </Switch>
       </HashRouter>
       {/* </header> */}
