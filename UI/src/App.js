@@ -13,11 +13,12 @@ import CommunityConnect from './Components/CommunityConnect/CommunityConnect';
 import Meditation from './Components/Meditation/Meditation';
 import ProfileMain from './Components/Profile/ProfileMain';
 import Affirmations from './Components/Affirmations/Affirmations';
+import BreathingExercise from './Components/Meditation/BreathingExercise';
+import MindfulMeditation from './Components/Meditation/MindfulMeditation';
 
 function App() {
   return (
     <div className="App">
-      {/* <header className="App-header"> */}
       <HashRouter>
           <Switch>
             <Route exact path="/" component={Home}/>
@@ -34,9 +35,10 @@ function App() {
             <Route exact path="/communityconnect" component={CommunityConnect}/>
             <Route exact path="/profile" component={ProfileMain}/>
             <Route exact path="/affirmations" component={Affirmations}/>
+            <Route exact path="/breathing" component={BreathingExercise}/>
+            <Route exact path="/mindfulmedi" component={MindfulMeditation}/>
           </Switch>
       </HashRouter>
-      {/* </header> */}
     </div>
   );
 }

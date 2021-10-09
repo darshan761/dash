@@ -149,7 +149,7 @@ export default function Home() {
               <Grid container spacing={3}>
               <Grid item xs={6} className={classes.leaderBoardParent}>
                   <Typography variant="subtitle1" align="center" className={classes.divHeading}>
-                    <b>🏆LEADERBOARD - Top Donors🏆</b>
+                    <b>🏆LEADERBOARD - Top Active Users🏆</b>
                   </Typography>
                   <br />
                   <List className={classes.leaderBoard}>

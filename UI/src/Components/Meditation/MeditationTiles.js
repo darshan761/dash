@@ -15,6 +15,7 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Slide from '@material-ui/core/Slide';
 import toast from 'react-hot-toast';
+import Link from '@material-ui/core/Link';
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
@@ -88,7 +89,7 @@ export default function MeditationTiles() {
   };
 
   const notifyWelcome = () => {
-    toast.success("NEAXT welcomes you !");
+    toast.success("DASH welcomes you !");
   };
 
   return (
@@ -129,7 +130,7 @@ export default function MeditationTiles() {
                           >
                           View More
                       </Button>
-                     
+                       <Link href={card.link}>
                       <Button
                             variant="outlined"
                             size="small"
@@ -137,8 +138,9 @@ export default function MeditationTiles() {
                             align="center"
                             fullWidth
                           >
-                          Start now
+                          Start
                       </Button>
+                      </Link> 
 
                       <Button
                             variant="outlined"
@@ -200,7 +202,17 @@ export default function MeditationTiles() {
 
   const featuredPosts = [
     {
+      title: 'Yoga and Spirituality - AI Yoga Pose Detector (Virtual Fitness Coach)',
+      link: "https://yogamodule.s3.amazonaws.com/YOGA+module/learn.html",
+      description:
+      'Points - 1500',
+      image: 'https://betterme.world/articles/wp-content/uploads/2020/12/shutterstock_665429929-740x451.jpg',
+      imageText: 'Artists name',
+      readmore: "Under your desk, raise both legs at once upwards, and slowly lower them down. Repeat few times."
+    },
+    {
       title: 'Breathing Exercise',
+      link: "/#/breathing",
       description:
       'Points - 600',
       image: 'https://media.istockphoto.com/vectors/woman-meditating-in-nature-and-leaves-concept-illustration-for-yoga-vector-id1139912908?k=20&m=1139912908&s=612x612&w=0&h=ljrtdv9NxmtUBrQ_lDzQGDmSQSnTlOMg6J75WWpDS3s=',
@@ -208,24 +220,19 @@ export default function MeditationTiles() {
       readmore: "While sitting down, stretch your arms out at your sides and press your shoulder blades together. With your palms facing down, circle your arms forwards around 20 times. Then, face your palms upwards and circle your arms backwards around 20 times. After this, circle your wrists 20 times in each direction."
     },
     {
-      title: 'Mindfulness meditation',
+      title: 'Mindfulness Meditation',
+      link: "/#/mindfulmedi",
       description:
       'Points - 900',
       image: 'https://media.istockphoto.com/vectors/mindfulness-meditation-and-yoga-background-in-pastel-vintage-colors-vector-id1152829238?k=20&m=1152829238&s=170667a&w=0&h=u1pVjWhiQ8BTan7yfN-EERQmDLfsCZ4PWs7f67a9XM0=',
       imageText: 'Artists name',
       readmore: "Stand up and hold your hands together behind your back, expanding your chest. Pull your shoulder blades as close together as possible and hold the pose for 30 seconds."
     },
-    {
-      title: 'Spiritual',
-      description:
-      'Points - 1500',
-      image: 'https://betterme.world/articles/wp-content/uploads/2020/12/shutterstock_665429929-740x451.jpg',
-      imageText: 'Artists name',
-      readmore: "Under your desk, raise both legs at once upwards, and slowly lower them down. Repeat few times."
-    },
+    
   
     {
-      title: 'Focused Meditation',
+      title: 'Focused Meditation (Coming soon)',
+      link: "/#/breathing",
       description:
       'Points - 1000',
       image: 'https://101yogasan.com/wp-content/uploads/2020/04/Focused-Meditation.jpg',
@@ -234,7 +241,8 @@ export default function MeditationTiles() {
     },
   
     {
-      title: 'Visualisation Meditation',
+      title: 'Visualisation Meditation (Coming soon)',
+      link: "/#/breathing",
       description:
       'Points - 2000',
       image: 'https://witchcraftandwitches.com/wp-content/uploads/2018/02/meditation-visualization-witchcraft-paganism-magic-1080x1080.jpg',
@@ -242,7 +250,8 @@ export default function MeditationTiles() {
       readmore: "Sitting at your desk, cover your left knee with your right hand and look over your left shoulder. Hold this pose for 30 seconds to stretch your back, remembering to breathe. Repeat the action on the opposite side."
     },
     {
-      title: 'Progressive Relaxation',
+      title: 'Progressive Relaxation (Coming soon)',
+      link: "/#/breathing",
       description:
       'Points - 800',
       image: 'https://cf.ltkcdn.net/stress/images/std/178976-425x290r1-lying-down.jpg',
