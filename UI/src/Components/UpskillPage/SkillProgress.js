@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
+import ServiceCall from '../../Service/ServiceCall';
+
 //import Link from '@material-ui/core/Link';
 
 const useStyles = makeStyles((theme) => ({
@@ -26,33 +28,54 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-const featuredPosts = [
-    {
-        title: 'Courses Completed',
-        value: '6',
-        icon: "https://cdn3.iconfinder.com/data/icons/online-learning-vol-1-2/64/Online_Learning-256.png",
-    },
-    {
-        title: 'Courses In Progress',
-        value: '1',
-        icon: "https://cdn3.iconfinder.com/data/icons/online-learning-vol-1-2/64/Video_Lession-256.png",
-    },
-    {
-        title: 'Badges Earned',
-        value: '3',
-        icon: "https://cdn0.iconfinder.com/data/icons/business-and-management-flat-8/24/ACHIEVEMENT_reward_winner_achievements-256.png",
-    },
-    {
-        title: 'Certifications Acquired',
-        value: '2',
-        icon: "https://cdn3.iconfinder.com/data/icons/higher-education-icon-set/256/diploma.png",
-    },
-];
-
 
 export default function SkillProgress(props) {
+    const [progress, setProgress] = useState({
+        badges_earned: '',
+        certfications: '',
+        courses_completed: '',
+        courses_in_progress:''
+      });
+    
+      useEffect(async () => {
+    
+         ServiceCall.getUserCourseDetails(1).then((response)=>{
+           
+        setProgress({
+            badges_earned: response.data.badges_earned,
+            certfications: response.data.certfications,
+            courses_completed: response.data.courses_completed,
+            courses_in_progress: response.data.courses_in_progress
+            })
+              console.log(response.data)
+          })
+    
+        }, [progress.badges_earned])
     const classes = useStyles();
     const { post } = props;
+
+    const featuredPosts = [
+        {
+            title: 'Courses Completed',
+            value: progress.courses_completed,
+            icon: "https://cdn3.iconfinder.com/data/icons/online-learning-vol-1-2/64/Online_Learning-256.png",
+        },
+        {
+            title: 'Courses In Progress',
+            value: progress.courses_in_progress,
+            icon: "https://cdn3.iconfinder.com/data/icons/online-learning-vol-1-2/64/Video_Lession-256.png",
+        },
+        {
+            title: 'Badges Earned',
+            value: progress.badges_earned,
+            icon: "https://cdn0.iconfinder.com/data/icons/business-and-management-flat-8/24/ACHIEVEMENT_reward_winner_achievements-256.png",
+        },
+        {
+            title: 'Certifications Acquired',
+            value: progress.certfications,
+            icon: "https://cdn3.iconfinder.com/data/icons/higher-education-icon-set/256/diploma.png",
+        },
+    ];
 
     return (
         <div className="container">

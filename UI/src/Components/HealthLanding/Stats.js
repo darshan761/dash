@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
@@ -10,8 +10,10 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import { Doughnut, Line } from 'react-chartjs-2';
 import { Table, TableBody, TableCell, TableRow } from '@material-ui/core';
+import ServiceCall from '../../Service/ServiceCall';
 
 const useStyles = makeStyles((theme) => ({
+
   mainGrid: {
     marginTop: theme.spacing(3),
   }, icon: {
@@ -130,35 +132,58 @@ const data = {
     },
   };
 
+
+export default function Stats() {
+
+  const [health, setHealth] = useState({
+    heart_rate: '',
+    step_count: '',
+    sleep: ''
+  });
+
+  useEffect(async () => {
+
+     ServiceCall.getUserHealthDetails(3).then((response)=>{
+       
+      setHealth({
+        heart_rate: response.data.heart_rate,
+        step_count: response.data.step_count,
+        sleep: response.data.sleep
+        })
+          console.log(response.data)
+      })
+
+    }, [health.heart_rate])
+
+
   const stats = [
     {
         name : "Heart Rate",
         image : "https://i.pinimg.com/originals/c3/b2/df/c3b2dff7986e701847f213423683f00a.png",
-        data : "70bpm"
+        data : health.heart_rate
     },
     {
         name : "Step Count",
         image : "https://www.vhv.rs/dpng/d/468-4683599_footprint-steps-steps-icon-white-png-transparent-png.png",
-        data : "1200 Steps"
+        data : health.step_count
     },
     {
         name : "Sleep",
         image : "https://www.iconpacks.net/icons/2/free-moon-icon-2287-thumb.png",
-        data : "7hrs 35m"
+        data : health.sleep
     },
     {
         name : "Step Count",
         image : "https://www.vhv.rs/dpng/d/468-4683599_footprint-steps-steps-icon-white-png-transparent-png.png",
-        data : "1200 Steps"
+        data : health.step_count
     },
     {
         name : "Sleep",
         image : "https://www.iconpacks.net/icons/2/free-moon-icon-2287-thumb.png",
-        data : "7hrs 35m"
+        data : health.sleep
     }
   ]
 
-export default function Stats() {
   const classes = useStyles();
   return (
     <React.Fragment>

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
@@ -13,6 +13,7 @@ import Header from '../LandingPage/Header';
 import MainFeaturedPost from '../LandingPage/MainFeaturedPost';
 import Stats from './Stats';
 import MentalHealth from './MentalHealth'
+import ServiceCall from '../../Service/ServiceCall';
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
@@ -71,7 +72,17 @@ const useStyles = makeStyles((theme) => ({
 export default function DeskExercise() {
   const classes = useStyles();
 
+  const [userName, setUserName] = useState("");
 
+  useEffect(async () => {
+
+     ServiceCall.getUserDetails(3).then((response)=>{
+       
+      setUserName(response.data.FirstName)
+          console.log(response.data)
+      })
+
+    }, [userName])
 
   return (
     <React.Fragment>
@@ -84,7 +95,7 @@ export default function DeskExercise() {
             <Box display="grid" gridTemplateColumns="repeat(12, 1fr)" gap={2}>
                 <Box gridColumn="span 12">
                     <Typography variant="h3" className={classes.text}>
-                        Good Evening, Eva!
+                        Good Evening, {userName}!
                     </Typography>
                     <hr/>
                 </Box>  

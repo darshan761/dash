@@ -7,6 +7,7 @@ import Grid from '@material-ui/core/Grid';
 import Header from '../LandingPage/Header';
 import { Box } from '@material-ui/core';
 import { Icon } from '@material-ui/core';
+import ServiceCall from '../../Service/ServiceCall';
 
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Rankings from './Rankings';
@@ -84,6 +85,36 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function ProfileMain() {
+
+    const [profile, setProfile] = useState({
+        FirstName: '',
+        LastName: '',
+        Department: '',
+        Designation: '',
+        Email:'',
+        goals_set:'',
+        points:'',
+        streaks:''
+      });
+
+      useEffect(async () => {
+    
+         ServiceCall.getUserDetails(3).then((response)=>{
+           
+            setProfile({
+                FirstName: response.data.FirstName,
+                LastName: response.data.LastName,
+                Department: response.data.Department,
+                Designation: response.data.Designation,
+                Email:response.data.Email,
+                goals_set:response.data.goals_set,
+                points:response.data.points,
+                streaks:response.data.streak
+            })
+              console.log(response.data)
+          })
+
+        }, [profile.FirstName])
     const classes = useStyles();
 
     return (
@@ -104,13 +135,13 @@ export default function ProfileMain() {
                                     >
                                 </img>
                                 <Typography variant="h5" className={classes.text}>
-                                    Kiyoko Tanaka
+                                    {profile.FirstName}   {profile.LastName}
                                 </Typography>
                                 <Typography variant="body1" className={classes.text}>
-                                    FrontEnd Engineer
+                                {profile.Designation}
                                 </Typography>
                                 <Typography variant="body1" className={classes.text}>
-                                    CTO Organization
+                                {profile.Department}
                                 </Typography>
                                 {/* <div className={classes.div1}>
                                     <CircleIcon/>
@@ -122,7 +153,7 @@ export default function ProfileMain() {
                         </Box>
                         <Box gridColumn="span 9" className={classes.gaps}>
                             <Card>
-                                <Rankings/>
+                                <Rankings profile={profile}/>
                             </Card>
                         </Box>
                         <Box gridColumn="span 12" className={classes.gaps}>

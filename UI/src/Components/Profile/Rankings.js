@@ -152,7 +152,7 @@ const data = {
     }
   ]
 
-export default function Rankings() {
+export default function Rankings(props) {
   const classes = useStyles();
   return (
     <React.Fragment>
@@ -169,7 +169,7 @@ export default function Rankings() {
                 </Box>
                 <Box gridColumn="span 10" className={classes.gaps}>
                     <Typography>
-                         You have earned 40 points based on your activities.You need 40 more points to get the next badge! 
+                         You have earned {props.profile.points} points based on your activities.You need {500-props.profile.points} more points to get the next badge! 
                          Good Luck!
                     </Typography>
                 </Box>
@@ -182,7 +182,7 @@ export default function Rankings() {
                         alt="points"
                     ></img>
                     <Typography>
-                        40 Points
+                    {props.profile.points} Points
                     </Typography>
                 </Box>
                 <Box gridColumn="span 4" className={classes.gaps}>
@@ -193,7 +193,7 @@ export default function Rankings() {
                         alt="streak"
                     ></img>
                     <Typography>
-                        4 Days Streak!
+                    {props.profile.streaks} Days Streak!
                     </Typography>
                 </Box>
                 <Box gridColumn="span 4" className={classes.gaps}>
@@ -204,7 +204,7 @@ export default function Rankings() {
                         alt="goals"
                     ></img>
                     <Typography>
-                        12 Goals Set
+                        {props.profile.goals_set} Goals Set
                     </Typography>
                 </Box>
             </Box>
